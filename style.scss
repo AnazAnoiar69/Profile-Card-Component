@@ -1,0 +1,111 @@
+// Font
+
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+$primary-font: "Kumbh Sans", sans-serif;
+
+h1 {
+  font-size: 1rem;
+}
+// Color
+
+$color-dark-cyan: hsl(185, 75%, 39%);
+$color-dark-blue: hsl(229, 23%, 23%);
+$color-grayish-blue: hsl(227, 10%, 46%);
+$dark-gray: hsl(0, 0%, 59%);
+$accent: hsla(0, 0%, 59%, 0.5);
+
+// Accessibility
+
+.bg-cyan {
+  background-color: $color-dark-cyan;
+}
+
+.bg-white {
+  background-color: white;
+}
+
+// Style
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $primary-font;
+
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url("./profile-card-component-main/images/bg-pattern-top.svg"),
+      url("./profile-card-component-main/images/bg-pattern-bottom.svg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: -50vh -25vh, 10vh 50vh;
+
+    .component {
+      display: block;
+      text-align: center;
+      border-radius: 0.5rem;
+      overflow: hidden;
+      width: 350px;
+      box-shadow: 0.5rem 0.5rem 10rem 0 hsla(229, 23%, 23%, 0.5);
+
+      .head-image {
+        background-image: url("./profile-card-component-main/images/bg-pattern-card.svg");
+        background-size: cover;
+        background-origin: border-box;
+        height: 10rem;
+      }
+
+      .inner-component {
+        margin-top: -3rem;
+        img {
+          border-radius: 50%;
+          border: solid 0.25rem white;
+        }
+
+        & > h1 {
+          span {
+            color: $dark-gray;
+            font-weight: 400;
+          }
+        }
+
+        p {
+          color: $dark-gray;
+          font-size: 0.75rem;
+        }
+
+        & > p {
+          padding-bottom: 1rem;
+        }
+
+        .stats-container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          column-gap: 3rem;
+          padding: 1rem;
+          border-top: solid 1px $accent;
+
+          & p,
+          h1 {
+            margin: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 750px) and (max-width: 1440px) {
+  .container {
+    background-position: left -50vh, right 50vh !important;
+  }
+}
+@media only screen and (min-width: 1440px) {
+  .container {
+    background-position: left -50vh, right 50vh !important;
+  }
+}
